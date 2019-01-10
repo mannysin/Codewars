@@ -13,12 +13,18 @@ summation(8) -> 36
 
 My approach:
 
+Write a loop that begins minus 1 of num, then decreases until 1.
+Finally, return num plus the total of looped i.
 
 */
 
 let summation = function (num) {
-    // Code here
-  }
+    for(i = num-1; i >= 1; i--){
+        num += i
+      }
+    
+      return num
+    }
 
 
 /* Test Cases
@@ -30,15 +36,18 @@ describe('summation', function () {
 })
 */
 
-summation()
+summation(8) // outputs 36
 
 /*
 Best Practice:
 
-
-
-
-
-
+var summation = function (num) {
+  let result = 0;
+  for (var i = 1; i <= num; i++) {
+    result += i;
+  }
+  
+  return result;
+}
 
 */
