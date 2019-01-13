@@ -10,10 +10,31 @@ If there is only one year provided, return the number of times a month ends on F
 
 For example, between 1901 and 2000, a month ends on Friday 171 times.
 
+My approach:
+
+Set a counter variable named friday.
+
+Run a nested loop for the year parameters, then all 12 months,
+then create a new date instance, then check if that day is a Friday (5).
+
+It it is, increase counter friday by 1.
+
+Finally, return friday counter.
+
 */
 
 function lastDayIsFriday(initialYear, endYear = initialYear) {
 
+    let friday = 0;
+      for(year = initialYear; year <= endYear; year++){
+         for(month = 0; month <= 11; month++){
+           var days = new Date(year, month+1, 0)
+           if(days.getDay() === 5){
+             friday++
+           }
+         }
+      }
+      return friday
 }
 
 
@@ -42,11 +63,20 @@ describe("Function lastDayIsFriday", function(){
 });
 */
 
-lastDayIsFriday() // outputs:
+lastDayIsFriday(1901, 2000) // outputs: 171
 
 /*
 Best Practice:
 
+function lastDayIsFriday(initialYear, endYear = initialYear) {
+  let fridays = 0
+  for (let y = initialYear; y <= endYear; y++) {
+    for (let month = 0; month < 12; month++) {
+      if (new Date(y, month + 1, 0).getDay() === 5) fridays++
+    } 
+  }
+  return fridays
+}
 
 
 */
