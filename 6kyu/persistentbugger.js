@@ -15,11 +15,26 @@ persistence(4) === 0 // because 4 is already a one-digit number
 
 My approach:
 
+Set a counter variable to count the amount of multiplicative persistent needed to reach a single digit.
+
+Take the argument and turn it into a string, then while the the num length is greater than 1, 
+use the .reduce method and convert back to string.
+add the counter each time the loop runs.
+
+Finally, return the counter.
 
 */
 
 function persistence(num) {
-    //code me
+    
+    let counter = 0;
+    num = num.toString();
+    while(num.length > 1){
+        num = [...num].reduce((a,b) => a * b).toString();
+        counter++;
+    }
+    return counter;
+    
 }
 
 
@@ -32,11 +47,22 @@ describe('Initial Tests', function () {
 });
 */
 
-persistence(39) // outputs:
+persistence(39) // outputs: 3
 
 /*
 Best Practice:
-
+function persistence(num) {
+   var times = 0;
+   
+   num = num.toString();
+   
+   while (num.length > 1) {
+     times++;
+     num = num.split('').map(Number).reduce((a, b) => a * b).toString();
+   }
+   
+   return times;
+}
 
 
 */
