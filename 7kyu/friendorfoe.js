@@ -10,9 +10,13 @@ Note: keep the original order of the names in the output.
 
 My approach:
 
+Run the .filter method on the array input and return only those with a string length of 4.
+
 */
 
 function friend(friends){
+    const result = friends.filter(friend => friend.length === 4);
+    return result
 }
 
 
@@ -36,5 +40,8 @@ friend(["Ryan", "Kieran", "Mark"]) // outputs:
 /*
 Best Practice:
 
+function friend(friends){
+  return friends.filter(n => n.length === 4)
+}
 
 */
