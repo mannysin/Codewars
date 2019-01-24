@@ -25,6 +25,8 @@ finalGrade(20, 2);    // 0
 
 My approach:
 
+Use conditionals and control flow to check if exams and projects meet their criteria for a Numerical grade.
+
 */
 
 function finalGrade (exam, projects) {
@@ -44,5 +46,11 @@ finalGrade(100,12) // output:
 /*
 Best Practice:
 
+function finalGrade (exam, projects) {
+  if(exam > 90 || projects > 10) return 100;
+  if(exam > 75 & projects >= 5) return 90;
+  if(exam > 50 & projects >= 2) return 75;
+  return 0;
+}
 
 */
