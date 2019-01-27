@@ -11,8 +11,8 @@ N is less than or equal to bound
 N is greater than 0.
 
 Notes
-The parameters (divisor, bound) passed to the function are only positve values .
-It's guaranteed that a divisor is Found .
+The parameters (divisor, bound) passed to the function are only positive values.
+It's guaranteed that a divisor is Found.
 Input >> Output Examples
 1- maxMultiple (2,7) ==> return (6)
 Explanation:
@@ -28,10 +28,12 @@ Explanation:
 
 My approach:
 
+Return the value of the boundary minus the boundary divided by the divisor.
+
 */
 
 function maxMultiple(divisor, bound){
-    //your code here
+    return bound-bound%divisor
 }
 
 /* Test Cases
@@ -49,10 +51,11 @@ describe("Basic tests", function(){
 });
 */
 
-maxMultiple(2,7) // outputs:
+maxMultiple(2,7) // outputs: 6
 
 /*
 Best Practice:
 
+const maxMultiple = (divisor,bound) => bound - bound % divisor;
 
 */
